@@ -18,12 +18,12 @@
                       <th>name</th>
                       <th>last_name</th>
                       <th>birthdate</th>
-		      <th>phone_number</th>
-		      <th>email_address</th>
-		      <th>user_name</th>
-		      <th>password</th>
-		      <th>Action</th>
-		      <th>Action</th>
+		                  <th>phone_number</th>
+	             	      <th>email_address</th>
+	             	      <th>user_name</th>
+            		      <th>password</th>
+            		      <th>Action</th>
+	             	      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -34,14 +34,13 @@
                       foreach ($pdo->query($sql) as $row) {
                             echo '<tr>';
                             echo '<form method="POST" action="updateCustomer.php">';
-			    echo '<td><input type="text" name="fn" value="'.$row['name'].'"></td>'; 
-			   // echo '<td>'. $row['name'] . '</td>';
-                            echo '<td>'. $row['last_name'] . '</td>';
-                            echo '<td>'. $row['birthdate'] . '</td>';
-                            echo '<td>'. $row['phone_number'] . '</td>';
-                            echo '<td>'. $row['email_address'] . '</td>';
-                            echo '<td>'. $row['user_name'] . '</td>';
-                            echo '<td>'. $row['password'] . '</td>';
+			                      echo '<td><input type="text" name="name" value="'.$row['name'].'"></td>'; 
+                            echo '<td><input type="text" name="last_name" value="'.$row['last_name'].'"></td>';
+                            echo '<td><input type="text" name="birthdate" value="'.$row['birthdate'].'"></td>';
+                            echo '<td><input type="text" name="phone_number" value="'.$row['phone_number'].'"></td>';
+                            echo '<td><input type="text" name="email_address" value="'.$row['email_address'].'"></td>';
+                            echo '<td><input type="text" name="user_name" value="'.$row['user_name'].'"></td>';
+                            echo '<td><input type="text" name="password" value="'.$row['password'].'"></td>';
 		 	    //echo '<td><a class="btn btn-success" href="update.php?id='.$row['id'].'">Update</a></td>';
                             echo '<td><input type="submit" value="Update"></td>';
 			    echo '</form>';
