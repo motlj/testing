@@ -8,7 +8,15 @@
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "DELETE * FROM customer WHERE id=?";
         $q = $pdo->prepare($sql);
-        $q->execute(array($id));
-        Database::disconnect();
-        header("Location: indexwithcreateandupdate.php");
+        //$q->execute(array($id));
+        //Database::disconnect();
+        //header("Location: indexwithcreateandupdate.php");
+        try { 
+           $q->execute(array($id));
+           Database::disconnect();
+           header("Location: indexwithcreateandupdate.php");
+       } catch (PDOException $e) { 
+           echo "Syntax Error: ".$e->getMessage(); 
+           die();
+       }
     }
