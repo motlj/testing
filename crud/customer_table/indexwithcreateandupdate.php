@@ -86,7 +86,7 @@
           <h3>Create a Customer</h3>
         </div>           
         <form class="form-horizontal" action="indexwithcreateandupdate.php" method="post"> 
-          
+
           <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
             <label class="control-label">Name</label>
             <div class="controls">
@@ -196,7 +196,7 @@
             $sql = 'SELECT * FROM customer ORDER BY id DESC';
             foreach ($pdo->query($sql) as $row) {
               echo '<tr>';
-              echo '<form method="POST" action="updateCustomer.php">';
+              echo '<form method="POST" action="indexwithcreateandupdate.php">';
 			        echo '<td><input type="text" name="name" value="'.$row['name'].'"></td>'; 
               echo '<td><input type="text" name="last_name" value="'.$row['last_name'].'"></td>';
               echo '<td><input type="text" name="birthdate" value="'.$row['birthdate'].'"></td>';
