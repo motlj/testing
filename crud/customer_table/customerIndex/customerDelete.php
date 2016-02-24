@@ -16,7 +16,7 @@
            $q->execute(array($id));
            Database::disconnect();
            header("Location: indexwithcreateandupdate.php");
-       } catch (PDOException $e) { 
+        } catch (PDOException $e) { 
            echo "Syntax Error: ".$e->getMessage(); 
            die();
        }
