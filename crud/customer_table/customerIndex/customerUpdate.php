@@ -1,5 +1,5 @@
 <?php
- 
+ error_reporting(E_ALL);
     require_once '../database.php';
  
     if ( !empty($_POST)) {
@@ -28,8 +28,8 @@
       $pdo = Database::connect();
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "UPDATE customer SET name=?,last_name=?,birthdate=?,phone_number=?,email_address=?,user_name=? WHERE id=?";
-  //    $q = $pdo->prepare($sql);
-    //  $q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name));
+        $q = $pdo->prepare($sql);
+        $q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$id));
       Database::disconnect();
-   //   header("Location: indexwithcreateandupdate.php");*/
+      header("Location: indexwithcreateandupdate.php");*/
     }
