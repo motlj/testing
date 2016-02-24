@@ -58,7 +58,6 @@
         $passwordError = 'Please enter Password';
         $valid = false;
       }
-    }
         // insert data
       if ($valid) {
         $pdo = Database::connect();
@@ -69,4 +68,4 @@
         Database::disconnect();
         header("Location: indexwithcreateandupdate.php");
       }
-    
+    }
