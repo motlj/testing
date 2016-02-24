@@ -5,6 +5,7 @@
  
     if ( !empty($_POST)) {
         // keep track validation errors
+
       $nameError = null;
       $last_nameError = null;
       $birthdateError = null;
@@ -14,6 +15,7 @@
       $passwordError = null;
          
         // keep track post values
+      $id = $_POST['id'];
       $name = $_POST['name'];
       $last_name = $_POST['last_name'];
       $birthdate = $_POST['birthdate'];
@@ -61,9 +63,9 @@
       if ($valid) {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO customer (name,last_name,birthdate,phone_number,email_address,user_name,password) values(?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO customer (name, last_name, birthdate, phone_number, email_address, user_name, password) values(?, ?, ?, ?, ?, ?, ?)";
         $q = $pdo->prepare($sql);
-        $q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password));
+        $q->execute(array($name, $last_name, $birthdate, $phone_number, $email_address, $user_name, $password));
         Database::disconnect();
         header("Location: indexwithcreateandupdate.php");
       }
