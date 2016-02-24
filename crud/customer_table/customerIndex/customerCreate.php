@@ -2,10 +2,8 @@
     error_reporting(E_ALL);
  
     require_once '../database.php';
-    
-    if ( !empty($_POST['id']) && isset($_POST['id'])) {
 
-    //if ( !empty($_POST)) {
+    if ( !empty($_POST) ) {
         // keep track validation errors
 
       $nameError = null;
@@ -15,7 +13,7 @@
       $email_addressError = null;
       $user_nameError = null;
       $passwordError = null;
-      
+
         // keep track post values
       //$id = $_POST['id'];
       $name = $_POST['name'];
@@ -65,9 +63,9 @@
       if ($valid) {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO customer (name, last_name, birthdate, phone_number, email_address, user_name, password) values(?, ?, ?, ?, ?, ?, ?)";
+        /*$sql = "INSERT INTO customer (name, last_name, birthdate, phone_number, email_address, user_name, password) values(?, ?, ?, ?, ?, ?, ?)";
         $q = $pdo->prepare($sql);
-        $q->execute(array($name, $last_name, $birthdate, $phone_number, $email_address, $user_name, $password));
+        $q->execute(array($name, $last_name, $birthdate, $phone_number, $email_address, $user_name, $password));*/
         Database::disconnect();
         header("Location: indexwithcreateandupdate.php");
       }
