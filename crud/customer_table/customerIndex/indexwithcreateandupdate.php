@@ -1,7 +1,7 @@
 <?php
     error_reporting(E_ALL);
  
-    require_once '../database.php';
+    //require_once '../database.php';
 
 /*    if ( !empty($_POST)) {
         // keep track validation errors
@@ -192,7 +192,7 @@
         </thead>
         <tbody>
           <?php
-            // include '../database.php';   --already required above
+            include '../database.php';  
             $pdo = Database::connect();
             $sql = 'SELECT * FROM customer ORDER BY id DESC';
             foreach ($pdo->query($sql) as $row) {
