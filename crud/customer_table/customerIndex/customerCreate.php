@@ -46,7 +46,7 @@
         $email_addressError = 'Please enter Email Address';
         $valid = false;
       } else if ( !filter_var($email_address,FILTER_VALIDATE_EMAIL) ) {
-        $email_addressError = 'Please Enter a valid Emial Address';
+        $email_addressError = 'Please Enter a valid Email Address';
         $valid = false;
       }
       if (empty($user_name)) {
@@ -62,9 +62,9 @@
       if ($valid) {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO customer (name,last_name,birthdate,phone_number,email_address,user_name,password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO customer (name,last_name,birthdate,phone_number,email_address,user_name,password) VALUES ([?], [?], [?], [?], [?], [?], [?])";
         $q = $pdo->prepare($sql);
-        //$q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password));
+        $q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password));
         Database::disconnect();
         header("Location: indexwithcreateandupdate.php");
       }
