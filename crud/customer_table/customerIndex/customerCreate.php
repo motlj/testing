@@ -26,8 +26,7 @@
          
         // validate input
       $valid = true;
-      header("Location: indexwithcreateandupdate.php");
-
+        
       if (empty($name)) {
         $nameError = 'Please enter Name';
         $valid = false;
@@ -64,9 +63,9 @@
       if ($valid) {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        /*$sql = "INSERT INTO customer (name, last_name, birthdate, phone_number, email_address, user_name, password) values(?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO customer (name, last_name, birthdate, phone_number, email_address, user_name, password) values (?, ?, ?, ?, ?, ?, ?)";
         $q = $pdo->prepare($sql);
-        $q->execute(array($name, $last_name, $birthdate, $phone_number, $email_address, $user_name, $password));*/
+        $q->execute(array($name, $last_name, $birthdate, $phone_number, $email_address, $user_name, $password));
         Database::disconnect();
         header("Location: indexwithcreateandupdate.php");
       }
