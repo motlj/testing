@@ -5,7 +5,7 @@
 
 /*    if ( !empty($_POST)) {
         // keep track validation errors
-*/
+
       $nameError = null;
       $last_nameError = null;
       $birthdateError = null;
@@ -14,7 +14,7 @@
       $user_nameError = null;
       $passwordError = null;
          
-/*        // keep track post values
+       // keep track post values
       $name = $_POST['name'];
       $last_name = $_POST['last_name'];
       $birthdate = $_POST['birthdate'];
