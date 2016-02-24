@@ -14,7 +14,8 @@
       $user_name = $_POST['username'];
          
       function valid($varname){
-        return ( !empty($varname) && isset($varname) );
+        return true;
+        //return ( !empty($varname) && isset($varname) );
       }
 
       if (!valid($name) || !valid($last_name) || !valid($birthdate) || !valid($user_name) || !valid($phone_number)) {
