@@ -196,7 +196,7 @@
             $sql = 'SELECT * FROM customer ORDER BY id DESC';
             foreach ($pdo->query($sql) as $row) {
               echo '<tr>';
-              echo '<form method="POST" action="indexwithcreateandupdate.php">';
+              echo '<form method="POST" action="updateCustomer.php">';
 			        echo '<td><input type="text" name="name" value="'.$row['name'].'"></td>'; 
               echo '<td><input type="text" name="last_name" value="'.$row['last_name'].'"></td>';
               echo '<td><input type="text" name="birthdate" value="'.$row['birthdate'].'"></td>';
