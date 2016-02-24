@@ -2,7 +2,7 @@
     error_reporting(E_ALL);
  
     require_once '../database.php';
- 
+/* 
     if ( !empty($_POST)) {
         // keep track validation errors
       $nameError = null;
@@ -67,7 +67,7 @@
         Database::disconnect();
         header("Location: indexwithcreateandupdate.php");
       }
-    }
+    }*/
 ?>
 
 <!DOCTYPE html>
