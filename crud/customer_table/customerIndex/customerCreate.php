@@ -93,7 +93,7 @@
         <div class="row">
           <h3>Create a Customer</h3>
         </div>           
-        <form class="form-horizontal" action="indexwithcreateandupdate.php" method="post"> 
+        <form class="form-horizontal" action="customerCreate.php" method="post"> 
 
           <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
             <label class="control-label">Name</label>
