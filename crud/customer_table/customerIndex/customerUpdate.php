@@ -24,12 +24,12 @@
       } else if ( !filter_var($email_address,FILTER_VALIDATE_EMAIL) ) {
         header("Location: indexwithcreateandupdate.php");
       }
-/*
+
       $pdo = Database::connect();
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = "UPDATE customer SET name=?,last_name=?,birthdate=?,phone_number=?,email_address=?,user_name=? WHERE id=?";
-      $q = $pdo->prepare($sql);
-      $q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name));
+//      $sql = "UPDATE customer SET name=?,last_name=?,birthdate=?,phone_number=?,email_address=?,user_name=? WHERE id=?";
+  //    $q = $pdo->prepare($sql);
+    //  $q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name));
       Database::disconnect();
-      header("Location: indexwithcreateandupdate.php");*/
+   //   header("Location: indexwithcreateandupdate.php");*/
     }
