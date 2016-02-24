@@ -3,9 +3,9 @@
  
     require_once '../database.php';
     
-    //if ( !empty($_POST['id']) && isset($_POST['id'])) {
+    if ( !empty($_POST['id']) && isset($_POST['id'])) {
 
-    if ( !empty($_POST)) {
+    //if ( !empty($_POST)) {
         // keep track validation errors
 
       $nameError = null;
@@ -15,7 +15,7 @@
       $email_addressError = null;
       $user_nameError = null;
       $passwordError = null;
-         
+      
         // keep track post values
       //$id = $_POST['id'];
       $name = $_POST['name'];
@@ -29,7 +29,7 @@
         // validate input
       $valid = true;
         
-/*      if (empty($name)) {
+      if (empty($name)) {
         $nameError = 'Please enter Name';
         $valid = false;
       }
@@ -59,7 +59,7 @@
       if (empty($password)) {
         $passwordError = 'Please enter Password';
         $valid = false;
-      }*/
+      }
          
         // insert data
       if ($valid) {
