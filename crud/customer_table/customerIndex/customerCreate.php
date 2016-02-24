@@ -62,9 +62,9 @@
       if ($valid) {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO customer (name,last_name,birthdate,phone_number,email_address,user_name,password) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        $q = $pdo->prepare($sql);
-        $q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password));
+        //$sql = "INSERT INTO customer (name,last_name,birthdate,phone_number,email_address,user_name,password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        //$q = $pdo->prepare($sql);
+        //$q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password));
         Database::disconnect();
         header("Location: indexwithcreateandupdate.php");
       }
