@@ -6,14 +6,14 @@
     if ( !empty($_POST)) {
         // keep track validation errors
 
-      $nameError = null;
+/*      $nameError = null;
       $last_nameError = null;
       $birthdateError = null;
       $phone_numberError = null;
       $email_addressError = null;
       $user_nameError = null;
       $passwordError = null;
-         
+*/         
         // keep track post values
       $name = $_POST['name'];
       $last_name = $_POST['last_name'];
