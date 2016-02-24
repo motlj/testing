@@ -74,5 +74,7 @@
            die();
        }
 
+      } else {
+          header("Location: indexwithcreateandupdate.php");
       }
     }
