@@ -30,33 +30,41 @@
       if (empty($name)) {
         $nameError = 'Please enter Name';
         $valid = false;
+        header("Location: indexwithcreateandupdate.php");
       }
       if (empty($last_name)) {
         $last_nameError = 'Please enter Last Name';
         $valid = false;
+        header("Location: indexwithcreateandupdate.php");
       }
       if (empty($birthdate)) {
         $birthdateError = 'Please enter Birthdate';
         $valid = false;
+        header("Location: indexwithcreateandupdate.php");
       }
       if (empty($phone_number)) {
         $phone_numberError = 'Please enter Phone Number';
         $valid = false;
+        header("Location: indexwithcreateandupdate.php");
       }
       if (empty($email_address)) {
         $email_addressError = 'Please enter Email Address';
+        header("Location: indexwithcreateandupdate.php");
         $valid = false;
       } else if ( !filter_var($email_address,FILTER_VALIDATE_EMAIL) ) {
         $email_addressError = 'Please Enter a valid Emial Address';
         $valid = false;
+        header("Location: indexwithcreateandupdate.php");
       }
       if (empty($user_name)) {
         $user_nameError = 'Please enter User Name';
         $valid = false;
+        header("Location: indexwithcreateandupdate.php");
       }
       if (empty($password)) {
         $passwordError = 'Please enter Password';
         $valid = false;
+        header("Location: indexwithcreateandupdate.php");
       }
          
         // insert data
