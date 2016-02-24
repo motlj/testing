@@ -1,11 +1,11 @@
 <?php
     error_reporting(E_ALL);
  
-    //require_once '../database.php';
+    require_once '../database.php';
 
 /*    if ( !empty($_POST)) {
         // keep track validation errors
-
+*/
       $nameError = null;
       $last_nameError = null;
       $birthdateError = null;
@@ -14,7 +14,7 @@
       $user_nameError = null;
       $passwordError = null;
          
-        // keep track post values
+/*        // keep track post values
       $name = $_POST['name'];
       $last_name = $_POST['last_name'];
       $birthdate = $_POST['birthdate'];
@@ -192,7 +192,7 @@
         </thead>
         <tbody>
           <?php
-            include '../database.php';  
+            // include '../database.php';   --already required above
             $pdo = Database::connect();
             $sql = 'SELECT * FROM customer ORDER BY id DESC';
             foreach ($pdo->query($sql) as $row) {

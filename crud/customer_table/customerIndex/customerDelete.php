@@ -7,7 +7,7 @@
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //$sql = "DELETE * FROM customer WHERE id = ?";
-        $sql = "DELETE FROM `ecommerce`.`customer` WHERE `customer`.`id` = ?";
+        $sql = "DELETE FROM `ecommerce`.`customer` WHERE `customer`.`id` = ?"; //taken from SQL query on phpMyAdmin
         $q = $pdo->prepare($sql);
         //$q->execute(array($id));
         //Database::disconnect();
