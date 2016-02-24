@@ -15,7 +15,7 @@
       $passwordError = null;
 
         // keep track post values
-      $id = $_POST['id'];
+      //$id = $_POST['id'];
       $name = $_POST['name'];
       $last_name = $_POST['last_name'];
       $birthdate = $_POST['birthdate'];
