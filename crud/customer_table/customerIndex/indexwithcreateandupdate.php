@@ -2,9 +2,10 @@
     error_reporting(E_ALL);
  
     require_once '../database.php';
-/* 
+
     if ( !empty($_POST)) {
         // keep track validation errors
+
       $nameError = null;
       $last_nameError = null;
       $birthdateError = null;
@@ -22,7 +23,7 @@
       $user_name = $_POST['user_name'];
       $password = $_POST['password'];
          
-        // validate input
+/*        // validate input
       $valid = true;
         
       if (empty($name)) {
