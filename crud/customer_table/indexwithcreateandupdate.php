@@ -9,8 +9,8 @@
       $last_nameError = null;
       $birthdateError = null;
       $phone_numberError = null;
-        $email_addressError = null;
-        $user_nameError = null;
+      $email_addressError = null;
+      $user_nameError = null;
       $passwordError = null;
          
         // keep track post values
@@ -18,62 +18,57 @@
       $last_name = $_POST['last_name'];
       $birthdate = $_POST['birthdate'];
       $phone_number = $_POST['phone_number'];
-        $email_address = $_POST['email_address'];
+      $email_address = $_POST['email_address'];
       $user_name = $_POST['user_name'];
-        $password = $_POST['password'];
+      $password = $_POST['password'];
          
         // validate input
-        $valid = true;
+      $valid = true;
         
-        if (empty($name)) {
-            $nameError = 'Please enter Name';
-            $valid = false;
-        }
-        if (empty($last_name)) {
-            $last_nameError = 'Please enter Last Name';
-            $valid = false;
-        }
-        if (empty($birthdate)) {
-            $birthdateError = 'Please enter Birthdate';
-            $valid = false;
-        }
-        if (empty($phone_number)) {
-            $phone_numberError = 'Please enter Phone Number';
-            $valid = false;
-        }
-        if (empty($email_address)) {
-            $email_addressError = 'Please enter Email Address';
-            $valid = false;
-        } else if ( !filter_var($email_address,FILTER_VALIDATE_EMAIL) ) {
-      $email_addressError = 'Please Enter a valid Emial Address';
-      $valid = false;
-  }
-        if (empty($user_name)) {
-            $user_nameError = 'Please enter User Name';
-            $valid = false;
-        }
-        if (empty($password)) {
-            $passwordError = 'Please enter Password';
-            $valid = false;
-        }
+      if (empty($name)) {
+        $nameError = 'Please enter Name';
+        $valid = false;
+      }
+      if (empty($last_name)) {
+        $last_nameError = 'Please enter Last Name';
+        $valid = false;
+      }
+      if (empty($birthdate)) {
+        $birthdateError = 'Please enter Birthdate';
+        $valid = false;
+      }
+      if (empty($phone_number)) {
+        $phone_numberError = 'Please enter Phone Number';
+        $valid = false;
+      }
+      if (empty($email_address)) {
+        $email_addressError = 'Please enter Email Address';
+        $valid = false;
+      } else if ( !filter_var($email_address,FILTER_VALIDATE_EMAIL) ) {
+        $email_addressError = 'Please Enter a valid Emial Address';
+        $valid = false;
+      }
+      if (empty($user_name)) {
+        $user_nameError = 'Please enter User Name';
+        $valid = false;
+      }
+      if (empty($password)) {
+        $passwordError = 'Please enter Password';
+        $valid = false;
+      }
          
         // insert data
-        if ($valid) {
-            $pdo = Database::connect();
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO customer (name,last_name,birthdate,phone_number,email_address,user_name,password) values(?, ?, ?, ?, ?, ?, ?)";
-            $q = $pdo->prepare($sql);
-            $q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password));
-            Database::disconnect();
-            header("Location: index.php");
-        }
+      if ($valid) {
+        $pdo = Database::connect();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "INSERT INTO customer (name,last_name,birthdate,phone_number,email_address,user_name,password) values(?, ?, ?, ?, ?, ?, ?)";
+        $q = $pdo->prepare($sql);
+        $q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password));
+        Database::disconnect();
+        header("Location: indexwithcreateandupdate.php");
+      }
     }
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,8 +85,9 @@
         <div class="row">
           <h3>Create a Customer</h3>
         </div>           
-      <form class="form-horizontal" action="create.php" method="post"> 
-      <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
+        <form class="form-horizontal" action="indexwithcreateandupdate.php" method="post"> 
+          
+          <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
             <label class="control-label">Name</label>
             <div class="controls">
               <input name="name" type="text" placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
@@ -101,7 +97,7 @@
             </div>
           </div>
 
-      <div class="control-group <?php echo !empty($last_nameError)?'error':'';?>">
+          <div class="control-group <?php echo !empty($last_nameError)?'error':'';?>">
             <label class="control-label">Last Name</label>
             <div class="controls">
               <input name="last_name" type="text" placeholder="Last Name" value="<?php echo !empty($last_name)?$last_name:'';?>">
@@ -111,7 +107,7 @@
             </div>
           </div>
 
-      <div class="control-group <?php echo !empty($birthdateError)?'error':'';?>">
+          <div class="control-group <?php echo !empty($birthdateError)?'error':'';?>">
             <label class="control-label">Birthdate</label>
             <div class="controls">
               <input name="birthdate" type="text" placeholder="Birthdate" value="<?php echo !empty($birthdate)?$birthdate:'';?>">
@@ -121,7 +117,7 @@
             </div>
           </div>
 
-      <div class="control-group <?php echo !empty($phone_numberError)?'error':'';?>">
+          <div class="control-group <?php echo !empty($phone_numberError)?'error':'';?>">
             <label class="control-label">Phone Number</label>
             <div class="controls">
               <input name="phone_number" type="text" placeholder="Phone Number" value="<?php echo !empty($phone_number)?$phone_number:'';?>">
@@ -131,7 +127,7 @@
             </div>
           </div>
 
-      <div class="control-group <?php echo !empty($email_addressError)?'error':'';?>">
+          <div class="control-group <?php echo !empty($email_addressError)?'error':'';?>">
             <label class="control-label">Email Address</label>
             <div class="controls">
               <input name="email_address" type="text" placeholder="Email Address" value="<?php echo !empty($email_address)?$email_address:'';?>">
@@ -141,7 +137,7 @@
             </div>
           </div>
 
-      <div class="control-group <?php echo !empty($user_nameError)?'error':'';?>">
+          <div class="control-group <?php echo !empty($user_nameError)?'error':'';?>">
             <label class="control-label">User Name</label>
             <div class="controls">
               <input name="user_name" type="text" placeholder="User Name" value="<?php echo !empty($user_name)?$user_name:'';?>">
@@ -151,7 +147,7 @@
             </div>
           </div>
 
-      <div class="control-group <?php echo !empty($passwordError)?'error':'';?>">
+          <div class="control-group <?php echo !empty($passwordError)?'error':'';?>">
             <label class="control-label">Password</label>
             <div class="controls">
               <input name="password" type="text" placeholder="Password" value="<?php echo !empty($password)?$password:'';?>">
@@ -163,7 +159,7 @@
                         
           <div class="form-actions">
             <button type="submit" class="btn btn-success">Create</button>
-        <a class="btn" href="index.php">Back</a>
+            <!-- no longer need a button to go back as this is the page being updated   <a class="btn" href="index.php">Back</a>   -->
           </div>
         </form>
       </div>
@@ -175,19 +171,20 @@
       <h3>PHP CRUD Grid: Customers</h3>
     </div>
     <div class="row">
-	    <p>
+	    <!-- no longer need create button here - use create button from html above
+      <p>
         <a href="create.php" class="btn btn-success">Create</a>
-      </p>
+      </p>-->
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
-            <th>name</th>
-            <th>last_name</th>
-            <th>birthdate</th>
-	          <th>phone_number</th>
-	          <th>email_address</th>
-	          <th>user_name</th>
-            <th>password</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Birthdate</th>
+	          <th>Phone Number</th>
+	          <th>Email Address</th>
+	          <th>User Name</th>
+            <th>Password</th>
             <th>Action</th>
 	          <th>Action</th>
           </tr>
