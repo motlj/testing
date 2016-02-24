@@ -13,9 +13,8 @@
       $email_address = $_POST['email'];
       $user_name = $_POST['username'];
          
-      function valid($varname){
-        return true;
-        //return ( !empty($varname) && isset($varname) );
+/*      function valid($varname){
+        return ( !empty($varname) && isset($varname) );
       }
 
       if (!valid($name) || !valid($last_name) || !valid($birthdate) || !valid($user_name) || !valid($phone_number)) {
@@ -32,5 +31,5 @@
       $q = $pdo->prepare($sql);
       $q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name));
       Database::disconnect();
-      header("Location: indexwithcreateandupdate.php");
+      header("Location: indexwithcreateandupdate.php");*/
     }
