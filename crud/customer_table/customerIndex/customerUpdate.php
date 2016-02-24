@@ -13,7 +13,7 @@
       $email_address = $_POST['email'];
       $user_name = $_POST['username'];
          
-/*      function valid($varname){
+      function valid($varname){
         return ( !empty($varname) && isset($varname) );
       }
 
@@ -24,7 +24,7 @@
       } else if ( !filter_var($email_address,FILTER_VALIDATE_EMAIL) ) {
         header("Location: indexwithcreateandupdate.php");
       }
-
+/*
       $pdo = Database::connect();
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $sql = "UPDATE customer SET name=?,last_name=?,birthdate=?,phone_number=?,email_address=?,user_name=? WHERE id=?";
