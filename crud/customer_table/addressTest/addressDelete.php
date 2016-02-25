@@ -7,14 +7,14 @@
         $id = $_POST['id'];
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "DELETE FROM `ecommerce`.`customer` WHERE `customer`.`id` = ?"; //taken from SQL query on phpMyAdmin
+        $sql = "DELETE FROM `ecommerce`.`address` WHERE `address`.`id` = ?"; //taken from SQL query on phpMyAdmin
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
         Database::disconnect();
-        header("Location: indexwithcreateandupdate.php");
+        header("Location: addressIndex.php");
       } catch (PDOException $e) { 
-        //echo "Syntax Error: ".$e->getMessage() . "<br />\n"; 
+        //echo "Syntax Error: ".$e->getMessage(); 
         //die();
-        header("Location: indexwithcreateandupdate.php?error=1");
+        header("Location: addressIndex.php");
       }
     }
