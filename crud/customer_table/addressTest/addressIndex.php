@@ -94,6 +94,13 @@
   <div class="container">
     <div class="row">
       <h3>PHP CRUD Grid: Addresses</h3>
+      
+      <?php
+        if( !empty($_POST['error']) && isset($_POST['error']) ) {
+        echo "Unable to delete from database.";
+        }
+      ?>
+
     </div>
     <div class="row">
 	    <!-- no longer need create button here - use create button from html above
