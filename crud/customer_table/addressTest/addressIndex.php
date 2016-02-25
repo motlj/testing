@@ -128,7 +128,7 @@
             foreach ($pdo->query($sql) as $row) {
               echo '<tr>';
 
-              echo '<form method="POST" action="customerUpdate.php">';
+              echo '<form method="POST" action="addressUpdate.php">';
               echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
 			        echo '<td><input type="text" name="street1" value="'.$row['street1'].'"></td>'; 
               echo '<td><input type="text" name="street2" value="'.$row['street2'].'"></td>';
