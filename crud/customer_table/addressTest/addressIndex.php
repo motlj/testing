@@ -136,7 +136,6 @@
               echo '<td><input type="text" name="state" value="'.$row['state'].'"></td>';
               echo '<td><input type="text" name="zip" value="'.$row['zip'].'"></td>';
               echo '<td><input type="text" name="country" value="'.$row['country'].'"></td>';
-              echo '<td>***</td>';
               echo '<td><input type="submit" value="Update"></td>';
 			        echo '</form>';
 
