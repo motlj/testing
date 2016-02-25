@@ -23,7 +23,7 @@
 
       $pdo = Database::connect();
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = "UPDATE customer SET street1 = ?, street2 = ?, city = ?, state = ?, zip = ?, country = ? WHERE id = ?";
+      $sql = "UPDATE address SET street1 = ?, street2 = ?, city = ?, state = ?, zip = ?, country = ? WHERE id = ?";
       $q = $pdo->prepare($sql);
       $q->execute(array($street1,$street2,$city,$state,$zip,$country,$id));
       Database::disconnect();
