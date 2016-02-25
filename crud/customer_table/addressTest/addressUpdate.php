@@ -5,6 +5,7 @@
     if ( !empty($_POST)) {
 
       // keep track post values
+      $id = $_POST['id'];
       $street1 = $_POST['street1'];
       $street2 = $_POST['street2'];
       $city = $_POST['city'];
