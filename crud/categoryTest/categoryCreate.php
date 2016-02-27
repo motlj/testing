@@ -11,7 +11,7 @@
 
         // keep track post values
       $name = $_POST['name'];
-      $category = $_POST['category'];
+      $description = $_POST['description'];
 
         // validate input
       $valid = true;
