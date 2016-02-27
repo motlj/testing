@@ -19,9 +19,9 @@
 
       $pdo = Database::connect();
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "UPDATE customer SET name = ?, description = ? WHERE id = ?";
-        $q = $pdo->prepare($sql);
-        $q->execute(array($name,$description));
+      $sql = "UPDATE customer SET name = ?, description = ? WHERE id = ?";
+      $q = $pdo->prepare($sql);
+      $q->execute(array($name,$description,$id));
       Database::disconnect();
       header("Location: categoryIndex.php");
     }

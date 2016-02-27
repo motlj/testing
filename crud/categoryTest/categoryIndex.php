@@ -20,7 +20,7 @@
         <div class="row">
           <h3>Create a Category</h3>
         </div>           
-        <form class="form-horizontal" action="categoryIndex.php" method="post"> 
+        <form class="form-horizontal" action="categoryCreate.php" method="post"> 
 
           <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
             <label class="control-label">Name</label>
