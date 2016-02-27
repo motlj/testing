@@ -20,8 +20,8 @@
         $nameError = 'Please enter Name';
         $valid = false;
       }
-      if (empty($category)) {
-        $categoryError = 'Please enter Category';
+      if (empty($description)) {
+        $descriptionError = 'Please enter Description';
         $valid = false;
       }
 
