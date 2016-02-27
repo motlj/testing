@@ -17,7 +17,7 @@
       $valid = true;
         
       if (empty($name)) {
-        $nameError = 'Please enter Name';
+        $nameError = 'Please enter Category Name';
         $valid = false;
       }
       if (empty($description)) {
@@ -58,14 +58,14 @@
     <div class="container">
       <div class="span10 offset1">
         <div class="row">
-          <h3>Create a Category</h3>
+          <h3>Create an Address</h3>
         </div>           
         <form class="form-horizontal" action="categoryCreate.php" method="post"> 
 
           <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
-            <label class="control-label">Name</label>
+            <label class="control-label">Category Name</label>
             <div class="controls">
-              <input name="name" type="text" placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
+              <input name="name" type="text" placeholder="Category Name" value="<?php echo !empty($name)?$name:'';?>">
               <?php if (!empty($nameError)): ?>
                 <span class="help-inline"><?php echo $nameError;?></span>
               <?php endif;?>
@@ -82,7 +82,6 @@
             </div>
           </div>
 
-                        
           <div class="form-actions">
             <button type="submit" class="btn btn-success">Create</button>
             <!-- no longer need a button to go back as this is the page being updated   <a class="btn" href="index.php">Back</a>   -->
